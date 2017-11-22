@@ -1,12 +1,12 @@
 
 var exec = require('cordova/exec');
 
-var PLUGIN_NAME = 'QRGenerator';
+var PLUGIN_NAME = 'QRGeneratorPlugin';
 
-var QRGenerator = {
+var QRGeneratorPlugin = {
   getQRCode : function (strtocode,cb){
   	exec(cb, null, PLUGIN_NAME, 'getQRCode', [strtocode]);
   }
 };
 
-module.exports = QRGenerator;
+module.exports = QRGeneratorPlugin;

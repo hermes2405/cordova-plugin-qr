@@ -6,19 +6,27 @@
     </description>
     <license>MIT</license>
     <keywords>bluetooh,pos,qr</keywords>
-    <repo></repo>
+    <repo>https://github.com/hermes2405/cordova-plugin-qr.git</repo>
     <issue></issue>
+
+	
+	<js-module src="www/QRGenerate.js" name="QRGenerate">
+		<runs/>
+        <clobbers target="QRGeneratorPlugin" />
+    </js-module>
+
+
     <!-- android -->
     <platform name="android">
-        <js-module src="www/plugin.js" name="plugin">
+        <!-- <js-module src="www/QRGenerate.js" name="QRGenerate">
             <runs/>
-            <!-- This is the window variable name you want, like window.MyCordovaPlugin -->
+            This is the window variable name you want, like window.MyCordovaPlugin
             <clobbers target="QRGenerator" />
-        </js-module>
+        </js-module> -->
         <config-file target="res/xml/config.xml" parent="/*">
-            <feature name="QRGenerator">
+            <feature name="QRGeneratorPlugin">
                 <param name="android-package" value="com.vicodex.QRGeneratorPlugin" />
-                <param name="onload" value="true" />
+                <!-- <param name="onload" value="true" /> -->
             </feature>
         </config-file>
         
