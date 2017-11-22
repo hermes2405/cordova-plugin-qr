@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<plugin xmlns="http://apache.org/cordova/ns/plugins/1.0" id="cordova-pos-qr-generator-plugin" version="1.0.0">
+    <name>Cordova POS QR Generator Plugin</name>
+    <description>
+        This plugin generate the equivalent of QR image in byte[]. Send the plugin the text to encode in QR image, and the plugin return byte[] of that image.
+    </description>
+    <license>MIT</license>
+    <keywords>bluetooh,pos,qr</keywords>
+    <repo></repo>
+    <issue></issue>
+    <!-- android -->
+    <platform name="android">
+        <js-module src="www/plugin.js" name="plugin">
+            <runs/>
+            <!-- This is the window variable name you want, like window.MyCordovaPlugin -->
+            <clobbers target="QRGenerator" />
+        </js-module>
+        <config-file target="res/xml/config.xml" parent="/*">
+            <feature name="QRGenerator">
+                <param name="android-package" value="com.vicodex.QRGeneratorPlugin" />
+                <param name="onload" value="true" />
+            </feature>
+        </config-file>
+        
+        <source-file src="src/android/libs/btsdk.jar" target-dir="libs/" />
+        <source-file src="src/android/libs/zixng.jar" target-dir="libs/" />
+        
+        <source-file src="src/android/com/vicodex/QRGeneratorPlugin.java" target-dir="src/com/vicodex/" />
+        <source-file src="src/android/com/command/sdk/Command.java" target-dir="src/com/command/sdk/" />
+        <source-file src="src/android/com/command/sdk/PrinterCommand.java" target-dir="src/com/command/sdk/" />
+        <source-file src="src/android/com/command/sdk/PrintPicture.java" target-dir="src/com/command/sdk/" />
+    </platform>
+</plugin>

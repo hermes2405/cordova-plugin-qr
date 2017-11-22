@@ -1,0 +1,11 @@
+{
+  "name": "cordova-pos-qr-generator-plugin",
+  "version": "1.0.0",
+  "cordova": {
+    "id": "cordova-pos-qr-generator-plugin",
+    "platforms": [
+      "android"
+    ]
+  },
+  "description": "This plugin generate the equivalent of QR image in byte[]. Send the plugin the text to encode in QR image, and the plugin return byte[] of that image"
+}
